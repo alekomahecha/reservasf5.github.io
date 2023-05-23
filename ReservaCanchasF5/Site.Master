@@ -51,13 +51,13 @@
         <header>
             <div class="navbar">
                 <div class="navbar-inner">
-                    <div class="container">
-                        <%--<a href="#" class="brand">@*<img src="images/logo.png" width="120" height="40" alt="Logo" />*@--%>
+                    <div class="container">                      
                         <!-- This is website logo -->
 
                         <!-- Navigation button, visible on small resolution -->
                         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                             <i class="icon-menu"></i>
+                              
                         </button>
                         <!-- Main navigation -->
                         <div class="nav-collapse collapse pull-right">
@@ -71,9 +71,11 @@
                                 <li><a runat="server" id="mSobreNosotros" href="~/Pages/SobreNosotros.aspx">Sobre Nosotros</a></li>
                                 <li><a runat="server" id="mContactenos" href="~/Pages/Contactenos.aspx">Contactanos</a></li>
                                 <li><a runat="server" id="mLogin" href="Pages/Login.aspx">Login</a></li>
-                                <li><a runat="server" id="mSalir" href="Pages/Login.aspx">Salir</a></li>
+                                <li><a runat="server" id="mSalir" href="Pages/LogOut.aspx">Salir</a></li>
+                                
                             </ul>
                         </div>
+                        <asp:Label ID="lblUsuario" runat="server" Visible="false" Text=""></asp:Label>
                         <!-- End main navigation -->
                     </div>
                 </div>

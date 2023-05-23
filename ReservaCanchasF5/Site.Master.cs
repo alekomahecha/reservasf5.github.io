@@ -11,13 +11,17 @@ namespace ReservaCanchasF5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null) { 
-            
+            if (Session["Usuario"] == null) {
+
                 mCanchas.Visible = false;
                 mHoras.Visible = false;
                 mReservas.Visible = false;
                 mUsuario.Visible = false;
                 mSalir.Visible = false;
+                mLogin.Visible = true;
+                mSobreNosotros.Visible = true;
+                mContactenos.Visible = true;
+                mReserva.Visible = true;
             }
             else {
 
@@ -27,6 +31,11 @@ namespace ReservaCanchasF5
                 mUsuario.Visible = true;
                 mSalir.Visible = true;
                 mLogin.Visible = false;
+                mSobreNosotros.Visible = false;
+                mContactenos.Visible = false;
+                mReserva.Visible = false;
+                lblUsuario.Visible = true;
+                lblUsuario.Text = "Bienvenido " + Session["nombre"].ToString() + " " + Session["Apellido"].ToString();
             }
         }
     }

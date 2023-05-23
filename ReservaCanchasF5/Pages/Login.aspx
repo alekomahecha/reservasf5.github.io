@@ -17,7 +17,8 @@
                         <br />                                    
                         <asp:Label ID="Label1" runat="server" Text="No tienes Usuario Empresarial Registrate " BackColor="White" ForeColor="Black"></asp:Label><a href="Persona/Registro.aspx">Aquí</a>
                         <br /> 
-                        <asp:Label ID="Label2" runat="server" Text="Datos Incorrectos o incompletos Intente Nuevamente " Visible="false" BackColor="White" ForeColor="Red"></asp:Label>
+                        <br /> 
+                        <div runat="server" visible="false" id="error" class="alert alert-danger" role="alert">Datos Incorrectos o incompletos Intente Nuevamente</div>
                     </div>
                     <div class="span4">                        
                     </div>

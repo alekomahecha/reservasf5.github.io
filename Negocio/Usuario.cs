@@ -83,5 +83,22 @@ namespace Negocio
             return dt;
         }
 
+        public DataTable AutenticacionUsuario(string pUsuario,string pContrasena)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOUsuario cx = new Model.DAOUsuario();
+            try
+            {
+                dt = cx.AutenticarUsuario(pUsuario, pContrasena);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+
+
     }
 }

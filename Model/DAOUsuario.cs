@@ -112,6 +112,30 @@ namespace Model
             }
             return tablaRetorno;
         }
+
+        public DataTable AutenticarUsuario(string pUsuario,string pContrasena)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT usu.id idUsuario, `usuario` " +
+                    ", `contrasena` , `idpersona` , `apellido` , " +
+                    "`correo` , `nombre` , `numeroidentificacion` " +
+                    ", `tipoidentificacion` FROM `usuario` usu " +
+                    "INNER JOIN `persona` per ON usu.idpersona = per.id" +
+                    " WHERE usuario = '"+ pUsuario + "' AND contrasena = '"+ pContrasena + "'";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
         public int GenerarID()
         {
             int Count = 0;

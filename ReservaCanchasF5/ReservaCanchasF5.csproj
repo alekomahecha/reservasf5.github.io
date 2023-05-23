@@ -190,6 +190,7 @@
     <Content Include="js\respond.min.js" />
     <Content Include="Pages\Contactenos.aspx" />
     <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\LogOut.aspx" />
     <Content Include="Pages\Persona\MiCuenta.aspx" />
     <Content Include="Pages\Persona\Registro.aspx" />
     <Content Include="Pages\SobreNosotros.aspx" />
@@ -294,6 +295,13 @@
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Persona\MiCuenta.aspx.cs">
       <DependentUpon>MiCuenta.aspx</DependentUpon>

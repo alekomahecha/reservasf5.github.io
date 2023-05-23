@@ -105,6 +105,15 @@ namespace ReservaCanchasF5
         protected global::System.Web.UI.HtmlControls.HtmlAnchor mSalir;
 
         /// <summary>
+        /// Control lblUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuario;
+
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>
