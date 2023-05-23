@@ -26,6 +26,28 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#txtsdate").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                onClose: function (selectedDate) {
+                    $("#txtedate").datepicker("option", "minDate", selectedDate);
+                }
+            });
+
+            $("#txtFechaReserva").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                onClose: function (selectedDate) {
+                    $("#txtFechaReserva").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+        })
+    </script>
 </head>
 <body>
     <form runat="server">

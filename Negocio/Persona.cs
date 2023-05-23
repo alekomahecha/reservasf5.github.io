@@ -94,6 +94,21 @@ namespace Negocio
             }
             return dt;
         }
+
+        public DataTable ConsultaPersonaxNumeroDocumento(String pNumDoc)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOPersona cx = new Model.DAOPersona();
+            try
+            {
+                dt = cx.ConsultaPersonaxNumeroDocumento(pNumDoc);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
     }
 }
 

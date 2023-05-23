@@ -150,8 +150,24 @@ namespace Model
             return Count;
 
         }
-
-
+        public DataTable ConsultaPersonaxNumeroDocumento(String pNumDoc)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "select * from persona where numeroidentificacion = '"+ pNumDoc +"'";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
 
 
     }
