@@ -1,12 +1,143 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class DAOReserva
+    public class DAOReserva
     {
+        public int id;
+        public string fechareserva;
+        
+
+        conexion cn = new conexion();
+
+        public int RegistrarReserva()
+        {
+            int Resultado = 0;
+            try
+            {
+                id = GenerarID();
+                string query = "INSERT INTO `reserva` (`id`, `fechareserva`,`estado`,`fechaRegistro`) VALUES (" +
+                    id + ",'"
+                    + fechareserva + "','"
+                    + 1 + "','"
+                    + DateTime.UtcNow.ToString() + "')";
+
+                if (cn.conectar() == true)
+                {
+                    Resultado = cn.TransaccionBase(query);
+                    Resultado = id;
+                }
+            }
+            catch (Exception ex)
+            {
+                Resultado = 0;
+                throw;
+            }
+            return Resultado;
+        }
+        public Boolean ModificarReserva()
+        {
+            Boolean Resultado = false;
+            Int32 valor;
+            try
+            {
+                string query = "UPDATE `reserva` SET " +
+                    "fechareserva= '" + fechareserva+ "'," +
+                    "Estado= '" + 1 + "'," +
+                    "fechaRegistro= '" + DateTime.UtcNow.ToString() + "' " +
+                    " WHERE id = " + id;
+
+                if (cn.conectar() == true)
+                {
+                    valor = cn.TransaccionBase(query);
+                    Resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Resultado = false;
+                throw;
+            }
+            return Resultado;
+        }
+        public Boolean EliminarReserva()
+        {
+            Boolean Resultado = false;
+            Int32 valor;
+            try
+            {
+                string query = "UPDATE `reserva` SET " +
+                    "Estado= '" + 0 + "'," +
+                    "fechaRegistro= '" + DateTime.UtcNow.ToString() + "' " +
+                    " WHERE id = " + id;
+
+                if (cn.conectar() == true)
+                {
+                    valor = cn.TransaccionBase(query);
+                    Resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Resultado = false;
+                throw;
+            }
+            return Resultado;
+        }
+        public DataTable ConsultaReserva()
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "select * from reserva";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
+        public int GenerarID()
+        {
+            int Count = 0;
+            try
+            {
+                DataTable tablaRetorno = new DataTable();
+                string query = "select max(id) as id from reserva";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                    foreach (DataRow item in tablaRetorno.Rows)
+                    {
+                        if (item[0].ToString() != String.Empty)
+                            Count = Convert.ToInt32(item[0].ToString()) + 1;
+                        else
+                            Count = 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return Count;
+
+        }
+
+
+
+
     }
 }
+
