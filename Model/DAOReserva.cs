@@ -134,10 +134,26 @@ namespace Model
             return Count;
 
         }
-
-
-
-
+        public DataTable ConsultaReservaxCancha(int pidCancha)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT fechareserva,hr.hora " +
+                    "FROM `reserva` INNER JOIN `hora` hr on rs.idhorareserva = hr.id " +
+                    "WHERE rs.estado = 1 and rs.idCancha = "+pidCancha+"";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
     }
 }
 

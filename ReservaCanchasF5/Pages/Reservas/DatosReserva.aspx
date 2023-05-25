@@ -57,7 +57,7 @@
                             <asp:TextBox class="span4" Enabled="false" placeholder="* valor Pago" ID="txtValorPago" runat="server"></asp:TextBox>
                         </li>                       
                     </ul>
-                    <asp:Button class="button button-ps" ID="btnReserva" runat="server" Text="Reservar" />
+                    <asp:Button class="button button-ps" ID="btnReserva" OnClick="btnReserva_Click" runat="server" Text="Reservar" />
                 </div>
                 <div class="span2">
                 </div>

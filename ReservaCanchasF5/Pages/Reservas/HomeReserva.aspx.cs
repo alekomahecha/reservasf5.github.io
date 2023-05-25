@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,6 +23,12 @@ namespace ReservaCanchasF5.Pages.Reservas
             dt = ngu.ConsultarCanchaxBarrio(txtUbicacion.Text);
             gvUbicaciones.DataSource = dt; 
             gvUbicaciones.DataBind();
+        }
+
+        protected void gvUbicaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["idCancha"] = gvUbicaciones.SelectedDataKey.Value.ToString();
+            Response.Redirect("~/Pages/Reservas/DatosReserva.aspx");
         }
     }
 }

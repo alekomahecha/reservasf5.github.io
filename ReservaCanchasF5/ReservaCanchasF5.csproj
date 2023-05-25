@@ -208,7 +208,7 @@
     <Content Include="Pages\LogOut.aspx" />
     <Content Include="Pages\Persona\MiCuenta.aspx" />
     <Content Include="Pages\Persona\Registro.aspx" />
-    <Content Include="Pages\RegistrarCancha.aspx" />
+    <Content Include="Pages\Canchas\RegistrarCancha.aspx" />
     <Content Include="Pages\Reservas\DatosReserva.aspx" />
     <Content Include="Pages\Reservas\HomeReserva.aspx" />
     <Content Include="Pages\SobreNosotros.aspx" />
@@ -335,11 +335,11 @@
     <Compile Include="Pages\Persona\Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegistrarCancha.aspx.cs">
+    <Compile Include="Pages\Canchas\RegistrarCancha.aspx.cs">
       <DependentUpon>RegistrarCancha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegistrarCancha.aspx.designer.cs">
+    <Compile Include="Pages\Canchas\RegistrarCancha.aspx.designer.cs">
       <DependentUpon>RegistrarCancha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Reservas\DatosReserva.aspx.cs">
@@ -388,7 +388,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Pages\Canchas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

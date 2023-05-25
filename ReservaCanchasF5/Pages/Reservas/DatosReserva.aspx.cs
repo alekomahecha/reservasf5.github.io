@@ -95,5 +95,10 @@ namespace ReservaCanchasF5.Pages.Reservas
                 throw ex;
             }
         }
+
+        protected void btnReserva_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

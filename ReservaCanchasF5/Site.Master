@@ -86,7 +86,7 @@
                             <ul class="nav" id="top-navigation">
                                 <li><a runat="server" id="mHome" href="Default.aspx">Home</a></li>
                                 <li><a runat="server" id="mReserva" href="~/Pages/Reservas/HomeReserva.aspx">Reserva</a></li>
-                                <li><a runat="server" id="mCanchas" href="~/Pages/RegistrarCancha.aspx">Canchas</a></li>
+                                <li><a runat="server" id="mCanchas" href="~/Pages/Canchas/RegistrarCancha.aspx">Canchas</a></li>
                                 <li><a runat="server" id="mUsuario" href="~/Pages/Persona/MiCuenta.aspx">Mi Cuenta</a></li>
                                 <li><a runat="server" id="mHoras" href="#service">Horas Canchas</a></li>
                                 <li><a runat="server" id="mReservas" href="#service">Reservas</a></li>
