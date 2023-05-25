@@ -86,15 +86,14 @@
                             <ul class="nav" id="top-navigation">
                                 <li><a runat="server" id="mHome" href="Default.aspx">Home</a></li>
                                 <li><a runat="server" id="mReserva" href="~/Pages/Reservas/HomeReserva.aspx">Reserva</a></li>
-                                <li><a runat="server" id="mCanchas" href="#service">Canchas</a></li>
+                                <li><a runat="server" id="mCanchas" href="~/Pages/RegistrarCancha.aspx">Canchas</a></li>
                                 <li><a runat="server" id="mUsuario" href="~/Pages/Persona/MiCuenta.aspx">Mi Cuenta</a></li>
                                 <li><a runat="server" id="mHoras" href="#service">Horas Canchas</a></li>
                                 <li><a runat="server" id="mReservas" href="#service">Reservas</a></li>
                                 <li><a runat="server" id="mSobreNosotros" href="~/Pages/SobreNosotros.aspx">Sobre Nosotros</a></li>
                                 <li><a runat="server" id="mContactenos" href="~/Pages/Contactenos.aspx">Contactanos</a></li>
                                 <li><a runat="server" id="mLogin" href="Pages/Login.aspx">Login</a></li>
-                                <li><a runat="server" id="mSalir" href="Pages/LogOut.aspx">Salir</a></li>
-                                
+                                <li><a runat="server" id="mSalir" href="Pages/LogOut.aspx">Salir</a></li>                                
                             </ul>
                         </div>
                         <asp:Label ID="lblUsuario" runat="server" Visible="false" Text=""></asp:Label>

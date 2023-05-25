@@ -10,7 +10,8 @@
                         <h3>Buscar ubicación cancha</h3>
                        
                         <ul class="list">
-                            <li><asp:TextBox class="span12" placeholder="* Ingresa Ubicación" ID="txtUbicacion" runat="server"></asp:TextBox></li>                           
+                            <li>
+                                <asp:TextBox class="span12" placeholder="* Ingresa Ubicación" ID="txtUbicacion" runat="server" OnTextChanged="txtUbicacion_TextChanged" AutoPostBack="true"></asp:TextBox></li>                           
                         </ul>  
                         <ul class="list">
                           <asp:GridView ID="gvUbicaciones" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">

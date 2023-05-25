@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
@@ -17,17 +13,18 @@ namespace Model
         public string telefono;
         public string horainicio;
         public string horafin;
+        public int idusuario;
 
         conexion cn = new conexion();
 
-        public int RegistrarCnacha()
+        public int RegistrarCancha()
         {
             int Resultado = 0;
             try
             {
                 id = GenerarID();
                 string query = "INSERT INTO `cancha` (`id`, `nombrecancha`, `numerocancha`, `direccion`," +
-                    "`barrio`,`telefono`,`horainicio`,`horafin`) VALUES (" +
+                    "`barrio`,`telefono`,`horainicio`,`horafin`, `estado`,`fecharegistro`,`idusuario`) VALUES (" +
                     id + ",'"
                     + nombrecancha + "','"
                     + numerocancha + "','"
@@ -37,7 +34,8 @@ namespace Model
                     + horainicio + "','"
                     + horafin + "','"
                     + 1 + "','"
-                    + DateTime.UtcNow.ToString() + "')";
+                    + DateTime.UtcNow.ToString() + "',"
+                    + idusuario + ")";
 
                 if (cn.conectar() == true)
                 {
@@ -151,6 +149,27 @@ namespace Model
             }
             return Count;
 
+        }
+
+        public DataTable ConsultaCanchaxBarrio(String pBarrio)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT id,nombrecancha,numerocancha,barrio,direccion,telefono,horainicio,horafin " +
+                    "FROM `cancha` WHERE estado=1 and barrio like'%"+ pBarrio + "%'";
+
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
         }
 
     }

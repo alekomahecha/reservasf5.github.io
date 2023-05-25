@@ -12,7 +12,7 @@ namespace Negocio
     {
         public int Registrar(String pNombreCancha, String pNumerochancha,
             String pDireccion, String pBarrio, String
-            pTelefono, String pHoraInicio, String pHoraFin)
+            pTelefono, String pHoraInicio, String pHoraFin,int pIdUsuario)
         {
 
             int result = 0;
@@ -26,7 +26,8 @@ namespace Negocio
                 cx.telefono = pTelefono;
                 cx.horainicio = pHoraInicio;
                 cx.horafin = pHoraFin;
-                result = cx.RegistrarCnacha();
+                cx.idusuario = pIdUsuario;
+                result = cx.RegistrarCancha();
             }
             catch (Exception ex)
             {
@@ -88,6 +89,21 @@ namespace Negocio
             try
             {
                 dt = cx.ConsultaCancha();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+        public DataTable ConsultarCanchaxBarrio(String pBarrio)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOCancha cx = new Model.DAOCancha();
+            try
+            {
+                dt = cx.ConsultaCanchaxBarrio(pBarrio);
             }
             catch (Exception ex)
             {

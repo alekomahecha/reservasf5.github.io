@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,15 @@ namespace ReservaCanchasF5.Pages.Reservas
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtUbicacion_TextChanged(object sender, EventArgs e)
+        {
+            Negocio.Cancha ngu = new Negocio.Cancha();
+            DataTable dt = new DataTable();
+            dt = ngu.ConsultarCanchaxBarrio(txtUbicacion.Text);
+            gvUbicaciones.DataSource = dt; 
+            gvUbicaciones.DataBind();
         }
     }
 }
