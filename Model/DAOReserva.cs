@@ -11,21 +11,27 @@ namespace Model
     {
         public int id;
         public string fechareserva;
+        public int idCancha;
+        public int idHorareserva;
+        public int idPersona;
+
         
 
         conexion cn = new conexion();
-
         public int RegistrarReserva()
         {
             int Resultado = 0;
             try
             {
                 id = GenerarID();
-                string query = "INSERT INTO `reserva` (`id`, `fechareserva`,`estado`,`fechaRegistro`) VALUES (" +
+                string query = "INSERT INTO `reserva`(`id`, `fechareserva`, `estado`, `fecharegistro`, `idpersona`, `idcancha`, `idhorareserva`) VALUES (" +
                     id + ",'"
                     + fechareserva + "','"
                     + 1 + "','"
-                    + DateTime.UtcNow.ToString() + "')";
+                    + DateTime.UtcNow.ToString() + "',"
+                    + idPersona + ","
+                    + idCancha + ","
+                    + idHorareserva +")";
 
                 if (cn.conectar() == true)
                 {
@@ -48,6 +54,9 @@ namespace Model
             {
                 string query = "UPDATE `reserva` SET " +
                     "fechareserva= '" + fechareserva+ "'," +
+                    "idpersona= " + idPersona+ "," +
+                    "idcancha= " + idCancha+ "," +
+                    "idhorareserva= " + idHorareserva+ "," +
                     "Estado= '" + 1 + "'," +
                     "fechaRegistro= '" + DateTime.UtcNow.ToString() + "' " +
                     " WHERE id = " + id;
@@ -140,7 +149,7 @@ namespace Model
             try
             {
                 string query = "SELECT fechareserva,hr.hora " +
-                    "FROM `reserva` INNER JOIN `hora` hr on rs.idhorareserva = hr.id " +
+                    "FROM `reserva` rs INNER JOIN `hora` hr on rs.idhorareserva = hr.id " +
                     "WHERE rs.estado = 1 and rs.idCancha = "+pidCancha+"";
                 //string query = "select max(codigo) as id from departamento";
                 if (cn.conectar() == true)

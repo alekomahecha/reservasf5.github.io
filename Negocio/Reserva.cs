@@ -11,7 +11,7 @@ namespace Negocio
 {
     public class Reserva
     {
-        public int Registrar(String pfechareserva)
+        public int Registrar(String pfechareserva,Int32 pIdpersona,Int32 pIdcancha,Int32 pIdHoraReserva)
         {
 
             int result = 0;
@@ -19,7 +19,10 @@ namespace Negocio
             Model.DAOReserva cx = new Model.DAOReserva();
             try
             {
-                cx. fechareserva= pfechareserva;
+                cx.fechareserva= pfechareserva;
+                cx.idPersona= pIdpersona;
+                cx.idCancha= pIdcancha;
+                cx.idHorareserva = pIdHoraReserva;
                 result = cx.RegistrarReserva();
             }
             catch (Exception ex)
@@ -30,7 +33,7 @@ namespace Negocio
             return result;
         }
 
-        public Boolean Modificar(Int32 pId, String pfechaReserva)
+        public Boolean Modificar(Int32 pId, String pfechaReserva, Int32 pIdpersona, Int32 pIdcancha, Int32 pIdHoraReserva)
         {
 
             Boolean result = false;
@@ -39,6 +42,9 @@ namespace Negocio
             {
                 cx.id = pId;
                 cx.fechareserva= pfechaReserva;
+                cx.idPersona = pIdpersona;
+                cx.idCancha = pIdcancha;
+                cx.idHorareserva = pIdHoraReserva;
                 cx.ModificarReserva();
                 result = true;
             }
@@ -74,6 +80,21 @@ namespace Negocio
             try
             {
                 dt = cx.ConsultaReserva();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+        public DataTable ConsultaReservaxCancha(int pidCancha)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOReserva cx = new Model.DAOReserva();
+            try
+            {
+                dt = cx.ConsultaReservaxCancha(pidCancha);
             }
             catch (Exception ex)
             {

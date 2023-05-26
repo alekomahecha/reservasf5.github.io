@@ -12,7 +12,12 @@
                     
                     <ul class="list">
                         <li>
-                            <asp:TextBox class="span12" placeholder="* Tipo Identificacion" ID="txtTipoIden" runat="server"></asp:TextBox></li>
+                           <asp:DropDownList Enabled="false" class="span4" ID="dwTipoIdentificacion" runat="server">
+                                <asp:ListItem>Cedula</asp:ListItem>
+                                <asp:ListItem>NIT</asp:ListItem>
+                                <asp:ListItem>Tarjeta Identidad</asp:ListItem>
+                                <asp:ListItem>Cedula Extrajeria</asp:ListItem>
+                            </asp:DropDownList>
                         <li>
                             <asp:TextBox class="span12" placeholder="* Número Identificación" ID="txtNumIde" runat="server"></asp:TextBox></li>
                         <li>

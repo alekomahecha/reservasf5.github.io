@@ -25,7 +25,7 @@ namespace ReservaCanchasF5.Pages.Persona
                     Negocio.Persona ngp = new Negocio.Persona();
                     Negocio.Usuario ngu = new Negocio.Usuario();
                     int idPersona = 0;
-                    idPersona = ngp.Registrar(txtTipoIden.Text,
+                    idPersona = ngp.Registrar(dwTipoIdentificacion.SelectedValue,
                         txtNumIde.Text, txtNombre.Text, txtApellido.Text,
                         txtCorreo.Text,
                         txtTelefono.Text);
@@ -52,8 +52,6 @@ namespace ReservaCanchasF5.Pages.Persona
 
             try
             {
-                if(txtTipoIden.Text == string.Empty)
-                    validaciones = true;
                 if (txtNumIde.Text == string.Empty)
                     validaciones = true;
                 if (txtNombre.Text == string.Empty)

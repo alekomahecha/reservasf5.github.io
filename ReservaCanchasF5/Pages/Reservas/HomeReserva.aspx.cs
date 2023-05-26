@@ -18,17 +18,33 @@ namespace ReservaCanchasF5.Pages.Reservas
 
         protected void txtUbicacion_TextChanged(object sender, EventArgs e)
         {
-            Negocio.Cancha ngu = new Negocio.Cancha();
-            DataTable dt = new DataTable();
-            dt = ngu.ConsultarCanchaxBarrio(txtUbicacion.Text);
-            gvUbicaciones.DataSource = dt; 
-            gvUbicaciones.DataBind();
+            try
+            {
+                Negocio.Cancha ngu = new Negocio.Cancha();
+                DataTable dt = new DataTable();
+                dt = ngu.ConsultarCanchaxBarrio(txtUbicacion.Text);
+                gvUbicaciones.DataSource = dt;
+                gvUbicaciones.DataBind();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         protected void gvUbicaciones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["idCancha"] = gvUbicaciones.SelectedDataKey.Value.ToString();
-            Response.Redirect("~/Pages/Reservas/DatosReserva.aspx");
+            try
+            {
+                Session["idCancha"] = gvUbicaciones.SelectedDataKey.Value.ToString();
+                Response.Redirect("~/Pages/Reservas/DatosReserva.aspx");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
