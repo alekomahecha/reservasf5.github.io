@@ -12,7 +12,7 @@
                     
                     <ul class="list">
                         <li>
-                           <asp:DropDownList Enabled="false" class="span4" ID="dwTipoIdentificacion" runat="server">
+                           <asp:DropDownList class="span4" ID="dwTipoIdentificacion" runat="server">
                                 <asp:ListItem>Cedula</asp:ListItem>
                                 <asp:ListItem>NIT</asp:ListItem>
                                 <asp:ListItem>Tarjeta Identidad</asp:ListItem>
