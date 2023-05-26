@@ -10,12 +10,17 @@ namespace ReservaCanchasF5.Pages
 {
     public partial class RegistrarCancha : System.Web.UI.Page
     {
-        DataTable dtHorasFinal = new DataTable();
+        static DataTable dtHorasFinal = new DataTable();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             AgregarHoras();
-            dtHorasFinal.Columns.Add("Hora");
-            dtHorasFinal.Columns.Add("Precio");
+            if (!IsPostBack)
+            {
+                dtHorasFinal.Columns.Clear();
+                dtHorasFinal.Columns.Add("Hora");
+                dtHorasFinal.Columns.Add("Precio");
+            }
 
         }
 
@@ -26,8 +31,10 @@ namespace ReservaCanchasF5.Pages
                 if (!validaciones())
                 {
                     Negocio.Cancha ngp = new Negocio.Cancha();
-                    ngp.Registrar(txtNombreCancha.Text, txtNumeroCancha.Text, txtDireccion.Text,
+                    Negocio.Hora hora = new Negocio.Hora();
+                    int idcancha = ngp.Registrar(txtNombreCancha.Text, txtNumeroCancha.Text, txtDireccion.Text,
                         txtBarrio.Text, txtTelefono.Text, dwHoraInicio.SelectedValue, dwHoraFinal.SelectedValue, Convert.ToInt32(Session["IdUsuario"].ToString()));
+                    hora.Registrar(dtHorasFinal, idcancha);
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Registro Insertado con Exito');" +
                         "setTimeout(function(){window.location.href ='../Canchas/RegistrarCancha.aspx'}, 0000);", true);
                     //Response.Redirect("~/Pages/Login.aspx");
@@ -155,13 +162,21 @@ namespace ReservaCanchasF5.Pages
 
         protected void btnAgregarHora_Click(object sender, EventArgs e)
         {
-            DataRow row = dtHorasFinal.NewRow();
-            row["Hora"] = dwHora.SelectedValue;
-            row["Precio"] = txtPrecioHora.Text;
-            dtHorasFinal.Rows.Add(row);
-            gvHoras.DataSource = dtHorasFinal;
-            gvHoras.DataBind();
-
+            if (dwHora.SelectedValue != string.Empty)
+            {
+                DataRow row = dtHorasFinal.NewRow();
+                row["Hora"] = dwHora.SelectedValue;
+                row["Precio"] = txtPrecioHora.Text;
+                dtHorasFinal.Rows.Add(row);
+                gvHoras.DataSource = dtHorasFinal;
+                gvHoras.DataBind();
+                dwHora.Items.Remove(dwHora.SelectedValue);
+                txtPrecioHora.Text = "";                
+            }
+            else
+            {
+                txtPrecioHora.Enabled = false;
+            }
         }
     }
 }

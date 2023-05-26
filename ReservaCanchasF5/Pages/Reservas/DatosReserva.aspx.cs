@@ -19,7 +19,10 @@ namespace ReservaCanchasF5.Pages.Reservas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                CargarHorasxCancha();
+            }
         }
 
         protected void txtNumIde_TextChanged(object sender, EventArgs e)
@@ -43,8 +46,7 @@ namespace ReservaCanchasF5.Pages.Reservas
                         txtNombre.Enabled = false;
                         txtApellido.Enabled = false;
                         txtCorreo.Enabled = false;
-                        txtTelefono.Enabled = false;
-                        EnvioCorreo();
+                        txtTelefono.Enabled = false;                        
                     }
                     else
                     {
@@ -67,7 +69,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
         }
 
-        public void EnvioCorreo() {
+        public void EnvioCorreo()
+        {
 
             try
             {
@@ -98,7 +101,75 @@ namespace ReservaCanchasF5.Pages.Reservas
 
         protected void btnReserva_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        public void CargarHorasxCancha() 
+        {
+            try
+            {
+                Negocio.Hora ngu = new Negocio.Hora();
+                DataTable dt = new DataTable();
+                dt = ngu.ConsultaHoraxCanchaListaDesplegable(Convert.ToInt32(Session["IdCancha"]));
+                
+                foreach (DataRow dr in dt.Rows)
+                {
+                    ListItem valor;
+                    valor = new ListItem(dr[1].ToString(), dr[0].ToString());
+                    dwHorasReserva.Items.Add(valor);
+                }
+
+                Negocio.Hora ngus = new Negocio.Hora();
+                DataTable dte = new DataTable();
+                dte = ngus.ConsultaPrecioHoraxCanchaid(Convert.ToInt32(dwHorasReserva.SelectedValue));
+                foreach (DataRow isa in dte.Rows)
+                {
+                    txtValorPago.Text = isa[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        
+        
+        }
+
+        protected void dwHorasReserva_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Negocio.Hora ngu = new Negocio.Hora();
+                DataTable dt = new DataTable();
+                dt = ngu.ConsultaPrecioHoraxCanchaid(Convert.ToInt32(dwHorasReserva.SelectedValue));
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtValorPago.Text = dr[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        protected void dwValorChange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dwValorChange.SelectedValue == "Pago Total")
+                    txtValorPago.Enabled = false;
+                else
+                    txtValorPago.Enabled = true;                    
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+       
     }
 }

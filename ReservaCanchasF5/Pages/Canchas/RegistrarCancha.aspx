@@ -26,24 +26,25 @@
                         <li>
                             <div runat="server" visible="true" id="Div3" class="alert alert-info" role="alert">Datos Horas</div>                           
                             <div runat="server" visible="false" id="errorHoras" class="alert alert-danger" role="alert">Hora Inicio Mayor que hora fin</div>                           
-                            <asp:Label class="span3" ID="Label1" runat="server" Text="Hora Apertura:"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Hora Apertura:"></asp:Label>
+                            
                             <asp:DropDownList class="span9" ID="dwHoraInicio" runat="server" AutoPostBack="true" OnSelectedIndexChanged="dwHoraInicio_SelectedIndexChanged">
                             </asp:DropDownList>      
                         </li>
                         <li>
-                            <asp:Label class="span3" ID="Label2" runat="server" Text="Hora Cierre:  "></asp:Label>
+                            <asp:Label  ID="Label2" runat="server" Text="Hora Cierre:  "></asp:Label>
                             <asp:DropDownList class="span9" AutoPostBack="true" ID="dwHoraFinal" runat="server" OnSelectedIndexChanged="dwHoraFinal_SelectedIndexChanged">
                             </asp:DropDownList>
                         </li>
                         <li>
-                            <asp:Label class="span2" ID="Label3" runat="server" Text="Hora:"></asp:Label>
+                            <asp:Label ID="Label3" runat="server" Text="Hora:"></asp:Label>
                             <asp:DropDownList class="span3" ID="dwHora" runat="server">
                             </asp:DropDownList>
                             <asp:TextBox class="span3" placeholder="* Precio Hora" ID="txtPrecioHora" runat="server" TextMode="Number"></asp:TextBox>
                             <asp:Button class="span3" ID="btnAgregarHora" runat="server" Text="Agregar Hora" OnClick="btnAgregarHora_Click" />
                         </li>
                         <li>
-                            <asp:GridView ID="gvHoras" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                            <asp:GridView ID="gvHoras" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="671px">
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <FooterStyle BackColor="#CCCCCC" />
                                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

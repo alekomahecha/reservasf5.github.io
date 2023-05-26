@@ -111,5 +111,20 @@ namespace Negocio
             }
             return dt;
         }
+
+        public DataTable ConsultarConsultaNombrexIdCancha(int pIdCancha)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOCancha cx = new Model.DAOCancha();
+            try
+            {
+                dt = cx.ConsultaNombrexIdCancha(pIdCancha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
     }
 }

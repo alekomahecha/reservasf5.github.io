@@ -28,7 +28,7 @@
                         <li>
                             <div runat="server" visible="true" id="error" class="alert alert-info" role="alert">Datos de la reserva</div>
                             <asp:TextBox class="span6" TextMode="DateTime" placeholder="* Fecha Reserva" ID="txtFechaReserva" runat="server"></asp:TextBox>
-                            <asp:DropDownList class="span6" ID="dwHorasReserva" runat="server"></asp:DropDownList>
+                            <asp:DropDownList class="span6" ID="dwHorasReserva" AutoPostBack="true" runat="server" OnSelectedIndexChanged="dwHorasReserva_SelectedIndexChanged"></asp:DropDownList>
                         </li>
 
                         <li>
@@ -50,11 +50,11 @@
                                 <asp:ListItem>PSE</asp:ListItem>
                                 <asp:ListItem>Nequi</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:DropDownList class="span4" ID="dwValorChange" runat="server">
+                            <asp:DropDownList AutoPostBack="true" class="span4" ID="dwValorChange" runat="server" OnSelectedIndexChanged="dwValorChange_SelectedIndexChanged">
                                 <asp:ListItem>Abono</asp:ListItem>
                                 <asp:ListItem>Pago Total</asp:ListItem>                                
                             </asp:DropDownList>
-                            <asp:TextBox class="span4" Enabled="false" placeholder="* valor Pago" ID="txtValorPago" runat="server"></asp:TextBox>
+                            <asp:TextBox class="span4" Enabled="true" placeholder="* valor Pago" ID="txtValorPago" runat="server"></asp:TextBox>
                         </li>                       
                     </ul>
                     <asp:Button class="button button-ps" ID="btnReserva" OnClick="btnReserva_Click" runat="server" Text="Reservar" />
