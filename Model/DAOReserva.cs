@@ -163,6 +163,32 @@ namespace Model
             }
             return tablaRetorno;
         }
+
+        public DataTable ConsultaReservaxidUsuario(int pidUsuario)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT r.fechareserva,h.hora,h.precio,p.tipopago,p.totalvalorpago,p.tipopago, "+
+                            "p.abono,p.montoabono,c.nombrecancha,CONCAT(per.nombre, ' ', per.apellido) As Nombre,per.telefono" +
+                            " FROM `reserva` r "+
+                            " inner join `hora` h on r.idhorareserva = h.id"+
+                            " inner join `pago` p on r.id = p.idreserva"+
+                            " inner join `cancha` c on c.id = r.idcancha"+
+                            " inner join `persona` per on per.id = r.idpersona"+
+                            " WHERE r.estado = 1 and c.idUsuario = " + pidUsuario + "";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
     }
 }
 

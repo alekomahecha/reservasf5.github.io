@@ -11,7 +11,7 @@ namespace Negocio
     public class Pago
     {
         public int Registrar(String pFechaPago, String pAbono,
-           double pMontoAbono, String pTotalPago, double pTotalValorPago, int pIdReserva)
+           double pMontoAbono,String pTipoPago ,String pTotalPago, double pTotalValorPago, int pIdReserva)
         {
 
             int result = 0;
@@ -21,6 +21,7 @@ namespace Negocio
                 cx.fechapago = pFechaPago;
                 cx.abono = pAbono;
                 cx.montoabono = pMontoAbono;
+                cx.tipopago = pTipoPago;
                 cx.totalpago = pTotalPago;
                 cx.totalvalorpago = pTotalValorPago;
                 cx.idreserva = pIdReserva;

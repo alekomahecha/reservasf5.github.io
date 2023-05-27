@@ -143,7 +143,7 @@ namespace ReservaCanchasF5.Pages.Reservas
                                 PagoTotal = "SI";
                                 ValorPagoTotal = Convert.ToDouble(txtValorPago.Text);
                             }
-                            ngpago.Registrar(fechaPago, Abono, valorAbono, PagoTotal, ValorPagoTotal, idreserva);
+                            ngpago.Registrar(fechaPago, Abono,valorAbono,dwTipoPago.SelectedValue, PagoTotal, ValorPagoTotal, idreserva);
                             EnvioCorreo();
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Reserva Realizada con Exito');" +
                             "setTimeout(function(){window.location.href ='../../Default.aspx'}, 0000);", true);

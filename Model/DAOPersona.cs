@@ -169,6 +169,28 @@ namespace Model
             return tablaRetorno;
         }
 
+        public DataTable ConsultaPersonaxId(int pid)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "select p.nombre,p.apellido,p.tipoidentificacion," +
+                    "p.numeroidentificacion,p.correo,p.telefono," +
+                    "u.usuario,u.contrasena from persona p inner join usuario u on p.id = u.idpersona" +
+                    " where p.estado=1 and p.id =" + pid+"";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
+
 
     }
 }

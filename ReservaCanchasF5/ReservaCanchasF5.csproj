@@ -212,6 +212,7 @@
     <Content Include="Pages\Persona\MiCuenta.aspx" />
     <Content Include="Pages\Persona\Registro.aspx" />
     <Content Include="Pages\Canchas\RegistrarCancha.aspx" />
+    <Content Include="Pages\Reservas\ConsultaReservas.aspx" />
     <Content Include="Pages\Reservas\DatosReserva.aspx" />
     <Content Include="Pages\Reservas\HomeReserva.aspx" />
     <Content Include="Pages\SobreNosotros.aspx" />
@@ -344,6 +345,13 @@
     </Compile>
     <Compile Include="Pages\Canchas\RegistrarCancha.aspx.designer.cs">
       <DependentUpon>RegistrarCancha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reservas\ConsultaReservas.aspx.cs">
+      <DependentUpon>ConsultaReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Reservas\ConsultaReservas.aspx.designer.cs">
+      <DependentUpon>ConsultaReservas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Reservas\DatosReserva.aspx.cs">
       <DependentUpon>DatosReserva.aspx</DependentUpon>

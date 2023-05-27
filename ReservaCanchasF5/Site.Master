@@ -89,7 +89,7 @@
                                 <li><a runat="server" id="mCanchas" href="~/Pages/Canchas/RegistrarCancha.aspx">Canchas</a></li>
                                 <li><a runat="server" id="mUsuario" href="~/Pages/Persona/MiCuenta.aspx">Mi Cuenta</a></li>
                                 <li><a runat="server" id="mHoras" href="#service">Horas Canchas</a></li>
-                                <li><a runat="server" id="mReservas" href="#service">Reservas</a></li>
+                                <li><a runat="server" id="mReservas" href="~/Pages/Reservas/ConsultaReservas.aspx">Reservas</a></li>
                                 <li><a runat="server" id="mSobreNosotros" href="~/Pages/SobreNosotros.aspx">Sobre Nosotros</a></li>
                                 <li><a runat="server" id="mContactenos" href="~/Pages/Contactenos.aspx">Contactanos</a></li>
                                 <li><a runat="server" id="mLogin" href="Pages/Login.aspx">Login</a></li>

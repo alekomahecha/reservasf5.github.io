@@ -102,5 +102,20 @@ namespace Negocio
             }
             return dt;
         }
+
+        public DataTable ConsultaReservaxidUsuario(int pidUsuario)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOReserva cx = new Model.DAOReserva();
+            try
+            {
+                dt = cx.ConsultaReservaxidUsuario(pidUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
     }
 }

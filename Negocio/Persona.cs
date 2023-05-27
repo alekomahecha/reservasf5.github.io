@@ -109,6 +109,21 @@ namespace Negocio
             }
             return dt;
         }
+
+        public DataTable ConsultaPersonaxId(int pid)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOPersona cx = new Model.DAOPersona();
+            try
+            {
+                dt = cx.ConsultaPersonaxId(pid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
     }
 }
 

@@ -112,7 +112,6 @@ namespace Model
             }
             return tablaRetorno;
         }
-
         public DataTable AutenticarUsuario(string pUsuario,string pContrasena)
         {
             DataTable tablaRetorno = new DataTable();
@@ -163,5 +162,6 @@ namespace Model
             return Count;
 
         }
+
     }
 }
