@@ -15,6 +15,15 @@ namespace ReservaCanchasF5.Pages
     {
 
         /// <summary>
+        /// Control error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl error;
+
+        /// <summary>
         /// Control txtCorreo.
         /// </summary>
         /// <remarks>

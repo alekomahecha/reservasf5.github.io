@@ -9,14 +9,15 @@ namespace Negocio
 {
     public class Hora
     {
-        public int Registrar(DataTable pHoras,int pIdcancha)
+        public int Registrar(DataTable pHoras, int pIdcancha)
         {
 
             int result = 0;
             Model.DAOHora cx = new Model.DAOHora();
             try
             {
-                foreach (DataRow dr in pHoras.Rows) {
+                foreach (DataRow dr in pHoras.Rows)
+                {
                     cx.hora = dr[0].ToString();
                     cx.precio = dr[1].ToString(); ;
                     cx.idCancha = pIdcancha;
@@ -30,22 +31,34 @@ namespace Negocio
             }
             return result;
         }
-        public Boolean Modificar(Int32 pId, String pHora, String pPrecio)
+        public Boolean Modificar(DataTable pHoras, int pIdcancha)
         {
 
             Boolean result = false;
             Model.DAOHora cx = new Model.DAOHora();
             try
             {
-                cx.id = pId;
-                cx.hora = pHora;
-                cx.precio = pPrecio;
-                cx.ModificarHora();
-                result = true;
+                foreach (DataRow dr in pHoras.Rows)
+                {
+                    if (dr[2].ToString() == "-1")
+                    {
+                        cx.hora = dr[0].ToString();
+                        cx.precio = dr[1].ToString(); ;
+                        cx.idCancha = pIdcancha;
+                        cx.RegistrarHora();
+                    }
+                    else
+                    {                        
+                        cx.hora = dr[0].ToString();
+                        cx.precio = dr[1].ToString(); ;
+                        cx.id = Convert.ToInt32(dr[2].ToString());
+                        cx.idCancha = pIdcancha;
+                        cx.ModificarHora();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                result = false;
                 throw ex;
             }
             return result;
@@ -102,6 +115,20 @@ namespace Negocio
             try
             {
                 dt = cx.ConsultaPrecioHoraxCanchaid(pId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+        public DataTable ConsultaHoraxCancha(int pIdCancha)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOHora cx = new Model.DAOHora();
+            try
+            {
+                dt = cx.ConsultaHoraxCancha(pIdCancha);
             }
             catch (Exception ex)
             {

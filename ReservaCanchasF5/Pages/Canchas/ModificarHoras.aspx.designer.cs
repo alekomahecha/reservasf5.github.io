@@ -7,128 +7,119 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ReservaCanchasF5
+namespace ReservaCanchasF5.Pages.Canchas
 {
 
 
-    public partial class SiteMaster
+    public partial class ModificarHoras
     {
 
         /// <summary>
-        /// Control mHome.
+        /// Control error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mHome;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl error;
 
         /// <summary>
-        /// Control mReserva.
+        /// Control Div3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mReserva;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div3;
 
         /// <summary>
-        /// Control mCanchas.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mCanchas;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control mmiCanchas.
+        /// Control dwHoraInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mmiCanchas;
+        protected global::System.Web.UI.WebControls.DropDownList dwHoraInicio;
 
         /// <summary>
-        /// Control mUsuario.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mUsuario;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control mHoras.
+        /// Control dwHoraFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mHoras;
+        protected global::System.Web.UI.WebControls.DropDownList dwHoraFinal;
 
         /// <summary>
-        /// Control mReservas.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mReservas;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control mSobreNosotros.
+        /// Control dwHora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mSobreNosotros;
+        protected global::System.Web.UI.WebControls.DropDownList dwHora;
 
         /// <summary>
-        /// Control mContactenos.
+        /// Control txtPrecioHora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mContactenos;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecioHora;
 
         /// <summary>
-        /// Control mLogin.
+        /// Control btnAgregarHora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mLogin;
+        protected global::System.Web.UI.WebControls.Button btnAgregarHora;
 
         /// <summary>
-        /// Control mSalir.
+        /// Control gvHoras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mSalir;
+        protected global::System.Web.UI.WebControls.GridView gvHoras;
 
         /// <summary>
-        /// Control lblUsuario.
+        /// Control btnCancha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
-
-        /// <summary>
-        /// Control MainContent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btnCancha;
     }
 }

@@ -176,6 +176,25 @@ namespace Model
             }
             return tablaRetorno;
         }
+        public DataTable ConsultaHoraxCancha(int pIdCancha)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT  `hora`, `precio`,`id`" +
+                    "FROM `hora` WHERE estado = 1 and idCancha =" + pIdCancha + "";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
 
     }
 }

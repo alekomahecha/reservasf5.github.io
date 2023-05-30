@@ -126,5 +126,35 @@ namespace Negocio
             }
             return dt;
         }
+
+        public DataTable ConsultarCanchaxIdUsuario(Int32 pidUsuario)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOCancha cx = new Model.DAOCancha();
+            try
+            {
+                dt = cx.ConsultaCanchaxUsuario(pidUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+        public DataTable ConsultarCanchaxIdCancha(int pIdCancha)
+        {
+            DataTable dt = new DataTable();
+            Model.DAOCancha cx = new Model.DAOCancha();
+            try
+            {
+                dt = cx.ConsultaCanchaxIdCancha(pIdCancha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
     }
 }

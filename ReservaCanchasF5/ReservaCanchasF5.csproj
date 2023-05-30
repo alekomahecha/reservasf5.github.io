@@ -206,6 +206,10 @@
     <Content Include="js\jquery.placeholder.js" />
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\respond.min.js" />
+    <Content Include="Pages\Canchas\ConsultaHoras.aspx" />
+    <Content Include="Pages\Canchas\ConsultarCanchas.aspx" />
+    <Content Include="Pages\Canchas\ModificarCancha.aspx" />
+    <Content Include="Pages\Canchas\ModificarHoras.aspx" />
     <Content Include="Pages\Contactenos.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\LogOut.aspx" />
@@ -303,6 +307,34 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Canchas\ConsultaHoras.aspx.cs">
+      <DependentUpon>ConsultaHoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Canchas\ConsultaHoras.aspx.designer.cs">
+      <DependentUpon>ConsultaHoras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Canchas\ConsultarCanchas.aspx.cs">
+      <DependentUpon>ConsultarCanchas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Canchas\ConsultarCanchas.aspx.designer.cs">
+      <DependentUpon>ConsultarCanchas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Canchas\ModificarCancha.aspx.cs">
+      <DependentUpon>ModificarCancha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Canchas\ModificarCancha.aspx.designer.cs">
+      <DependentUpon>ModificarCancha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Canchas\ModificarHoras.aspx.cs">
+      <DependentUpon>ModificarHoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Canchas\ModificarHoras.aspx.designer.cs">
+      <DependentUpon>ModificarHoras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contactenos.aspx.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>

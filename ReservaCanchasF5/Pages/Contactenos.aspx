@@ -7,12 +7,13 @@
                     </div>
                     <div class="span6 price-column">
                         <h3>Contactenos</h3>
+                        <div runat="server" visible="false" id="error" class="alert alert-danger" role="alert">Datos incorrectos o incompletos revise nuevamente</div>
                        
                         <ul class="list">
                             <li><asp:TextBox class="span12" TextMode="Email" placeholder="* Tu Correo" ID="txtCorreo" runat="server" Width="343px"></asp:TextBox></li>
                             <li><asp:TextBox class="span12" TextMode="MultiLine" placeholder="* Tu Mensaje" ID="txtMensaje" runat="server" Height="181px" Width="348px"></asp:TextBox></li>
                                                     </ul>
-                        <asp:Button class="button button-ps" ID="btnEnviar" runat="server" Text="Enviar Mensaje"/>
+                        <asp:Button class="button button-ps" ID="btnEnviar" runat="server" Text="Enviar Mensaje" OnClick="btnEnviar_Click"/>
                         <br />
                         <br />   
                         <asp:Label ID="Label2" runat="server" Text="Datos Incorrectos o incompletos Intente Nuevamente " Visible="false" BackColor="White" ForeColor="Red"></asp:Label>

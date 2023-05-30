@@ -22,6 +22,8 @@ namespace ReservaCanchasF5
                 mSobreNosotros.Visible = true;
                 mContactenos.Visible = true;
                 mReserva.Visible = true;
+                mmiCanchas.Visible=false;
+
             }
             else {
 
@@ -35,6 +37,7 @@ namespace ReservaCanchasF5
                 mContactenos.Visible = false;
                 mReserva.Visible = false;
                 lblUsuario.Visible = true;
+                mmiCanchas.Visible = true;
                 lblUsuario.Text = "Bienvenido " + Session["nombre"].ToString() + " " + Session["Apellido"].ToString();
             }
         }

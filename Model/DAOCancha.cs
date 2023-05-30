@@ -157,7 +157,7 @@ namespace Model
             try
             {
                 string query = "SELECT id,nombrecancha,numerocancha,barrio,direccion,telefono,horainicio,horafin " +
-                    "FROM `cancha` WHERE estado=1 and barrio like'%"+ pBarrio + "%'";
+                    "FROM `cancha` WHERE estado=1 and barrio like'%" + pBarrio + "%'";
 
                 //string query = "select max(codigo) as id from departamento";
                 if (cn.conectar() == true)
@@ -177,7 +177,47 @@ namespace Model
             DataTable tablaRetorno = new DataTable();
             try
             {
-                string query = "select nombrecancha from cancha where id = "+ pIdCancha +"";
+                string query = "select nombrecancha from cancha where id = " + pIdCancha + "";
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
+
+        public DataTable ConsultaCanchaxUsuario(Int32 pIdUsuario)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "SELECT id,nombrecancha,numerocancha,barrio,direccion,telefono,horainicio,horafin " +
+                    "FROM `cancha` WHERE estado=1 and idUsuario=" + pIdUsuario +"";
+
+                //string query = "select max(codigo) as id from departamento";
+                if (cn.conectar() == true)
+                {
+                    tablaRetorno = cn.Consultar(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return tablaRetorno;
+        }
+
+        public DataTable ConsultaCanchaxIdCancha(int pIdCancha)
+        {
+            DataTable tablaRetorno = new DataTable();
+            try
+            {
+                string query = "select * from cancha where id = " + pIdCancha + "";
                 //string query = "select max(codigo) as id from departamento";
                 if (cn.conectar() == true)
                 {
