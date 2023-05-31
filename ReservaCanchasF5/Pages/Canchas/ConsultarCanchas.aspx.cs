@@ -41,7 +41,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             try
             {
                 Session["idCanchaConsulta"] = gvCanchas.SelectedDataKey.Value.ToString();
-                Response.Redirect("~/Pages/Canchas/ModificarCancha.aspx");
+                Response.Redirect("~/Pages/Canchas/ModificarCancha.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception ex)
             {

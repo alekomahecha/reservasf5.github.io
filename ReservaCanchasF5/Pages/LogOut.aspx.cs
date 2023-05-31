@@ -12,7 +12,8 @@ namespace ReservaCanchasF5.Pages.Persona
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.RemoveAll();
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Default.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
         }
     }
 }

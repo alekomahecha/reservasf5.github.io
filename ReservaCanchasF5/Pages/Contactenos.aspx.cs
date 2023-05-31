@@ -34,7 +34,8 @@ namespace ReservaCanchasF5.Pages
             }
             catch (Exception ex)
             {
-                Response.Redirect("~/Pages/404.aspx");
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -63,7 +64,8 @@ namespace ReservaCanchasF5.Pages
             }
             catch (Exception ex)
             {
-                Response.Redirect("~/Pages/404.aspx");
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -80,7 +82,8 @@ namespace ReservaCanchasF5.Pages
             catch (Exception ex)
             {
 
-                Response.Redirect("~/Pages/404.aspx");
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validaciones;

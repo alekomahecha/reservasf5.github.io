@@ -42,7 +42,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             {
                 
                 Session["idCanchaConsultaHoras"] = gvCanchas.SelectedDataKey.Value.ToString();
-                Response.Redirect("~/Pages/Canchas/ModificarHoras.aspx");
+                Response.Redirect("~/Pages/Canchas/ModificarHoras.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception ex)
             {

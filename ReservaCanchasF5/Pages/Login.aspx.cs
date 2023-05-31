@@ -39,7 +39,8 @@ namespace ReservaCanchasF5.Pages
                                 Session["Nombre"] = item[6].ToString();
                                 Session["NumeroIden"] = item[7].ToString();
                                 Session["TipoIden"] = item[8].ToString();
-                                Response.Redirect("~/Default.aspx");
+                                Response.Redirect("~/Default.aspx", false);
+                                Context.ApplicationInstance.CompleteRequest();
                             }
                             else
                             {
@@ -59,7 +60,8 @@ namespace ReservaCanchasF5.Pages
             catch (Exception)
             {
 
-                Response.Redirect("~/Pages/404.aspx");
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -77,7 +79,8 @@ namespace ReservaCanchasF5.Pages
             }
             catch (Exception ex)
             {
-                Response.Redirect("~/Pages/404.aspx");
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validaciones;
