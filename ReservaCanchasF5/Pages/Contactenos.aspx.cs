@@ -34,7 +34,7 @@ namespace ReservaCanchasF5.Pages
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx");
             }
         }
 
@@ -63,7 +63,7 @@ namespace ReservaCanchasF5.Pages
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx");
             }
         }
 
@@ -80,7 +80,7 @@ namespace ReservaCanchasF5.Pages
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx");
             }
 
             return validaciones;

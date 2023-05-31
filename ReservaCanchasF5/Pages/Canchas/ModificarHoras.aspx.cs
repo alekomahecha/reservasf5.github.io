@@ -47,7 +47,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -77,7 +78,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -109,8 +111,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -140,7 +142,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -162,7 +165,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -191,7 +195,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -204,13 +209,14 @@ namespace ReservaCanchasF5.Pages.Canchas
                 Negocio.Hora ngp = new Negocio.Hora();
                 ngp.Modificar(dtHorasFinal, Convert.ToInt32(Session["idCanchaConsultaHoras"].ToString()));
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Modificación con Exito');" +
-                    "setTimeout(function(){window.location.href ='../Canchas/ConsultarHoras.aspx'}, 0000);", true);
+                    "setTimeout(function(){window.location.href ='../Canchas/ConsultaHoras.aspx'}, 0000);", true);
                 //Response.Redirect("~/Pages/Login.aspx");
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -256,7 +262,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -269,7 +276,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
     }

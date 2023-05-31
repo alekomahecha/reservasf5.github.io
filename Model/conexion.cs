@@ -13,7 +13,7 @@ namespace Model
     public class conexion
     {
         MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString = "server=localhost; username=root; password=usbw; port=3307; database=sistemasreservas";
+        string myConnectionString = "server=127.0.0.1; username=root; password=; port=3306; database=sistemareservas";
 
         public Boolean conectar()
         {

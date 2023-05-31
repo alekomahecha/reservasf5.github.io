@@ -41,7 +41,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -65,7 +66,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validaciones;
@@ -98,8 +100,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -127,7 +129,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -141,7 +144,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -153,7 +157,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -179,7 +184,8 @@ namespace ReservaCanchasF5.Pages.Canchas
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 

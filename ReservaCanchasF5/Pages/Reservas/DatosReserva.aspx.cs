@@ -101,7 +101,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -143,7 +144,7 @@ namespace ReservaCanchasF5.Pages.Reservas
                                 PagoTotal = "SI";
                                 ValorPagoTotal = Convert.ToDouble(txtValorPago.Text);
                             }
-                            ngpago.Registrar(fechaPago, Abono,valorAbono,dwTipoPago.SelectedValue, PagoTotal, ValorPagoTotal, idreserva);
+                            ngpago.Registrar(fechaPago, Abono, valorAbono, dwTipoPago.SelectedValue, PagoTotal, ValorPagoTotal, idreserva);
                             EnvioCorreo();
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Reserva Realizada con Exito');" +
                             "setTimeout(function(){window.location.href ='../../Default.aspx'}, 0000);", true);
@@ -166,7 +167,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -197,7 +199,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -215,14 +218,15 @@ namespace ReservaCanchasF5.Pages.Reservas
                     txtValorPago.Text = dr[0].ToString();
                 }
                 if (!ValidarReservaxFechaHora())
-                    errorReservas.Visible = true;
-                else
                     errorReservas.Visible = false;
+                else
+                    errorReservas.Visible = true;
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -238,15 +242,16 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
         public string NombreCancha()
         {
+            string nombreCancha = string.Empty;
             try
             {
-                string nombreCancha = string.Empty;
                 Negocio.Cancha ngu = new Negocio.Cancha();
                 DataTable dt = new DataTable();
                 dt = ngu.ConsultarConsultaNombrexIdCancha(Convert.ToInt32(Session["idCancha"].ToString()));
@@ -260,10 +265,11 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception ex)
             {
 
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
-
+            return nombreCancha;
         }
 
         public Boolean validaciones()
@@ -291,7 +297,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validaciones;
@@ -312,7 +319,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception ex)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validaciones;
@@ -331,7 +339,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
 
@@ -348,7 +357,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
         }
@@ -369,7 +379,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             return validador;

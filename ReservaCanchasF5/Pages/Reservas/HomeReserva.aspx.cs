@@ -29,7 +29,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             catch (Exception)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -38,12 +39,14 @@ namespace ReservaCanchasF5.Pages.Reservas
             try
             {
                 Session["idCancha"] = gvUbicaciones.SelectedDataKey.Value.ToString();
-                Response.Redirect("~/Pages/Reservas/DatosReserva.aspx");
+                Response.Redirect("~/Pages/Reservas/DatosReserva.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception)
             {
 
-                throw;
+                Response.Redirect("~/Pages/404.aspx",false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
     }

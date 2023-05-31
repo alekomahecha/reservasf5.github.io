@@ -30,7 +30,8 @@ namespace ReservaCanchasF5.Pages.Reservas
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/Pages/404.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
     }

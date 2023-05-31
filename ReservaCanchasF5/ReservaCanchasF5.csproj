@@ -139,6 +139,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\404.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-responsive.css" />
     <Content Include="css\bootstrap.css" />
@@ -206,6 +207,7 @@
     <Content Include="js\jquery.placeholder.js" />
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\respond.min.js" />
+    <Content Include="Pages\404.aspx" />
     <Content Include="Pages\Canchas\ConsultaHoras.aspx" />
     <Content Include="Pages\Canchas\ConsultarCanchas.aspx" />
     <Content Include="Pages\Canchas\ModificarCancha.aspx" />
@@ -307,6 +309,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Canchas\ConsultaHoras.aspx.cs">
       <DependentUpon>ConsultaHoras.aspx</DependentUpon>
